@@ -1,0 +1,46 @@
+
+    <h3>NG ATTRIBUTES</h3>
+
+    <!-- NG IF -->
+    <p>NgIF Attribute : </p>
+    <div>
+        <input type="checkbox" [(ngModel)]="check">
+    </div>
+    <div>
+        <p *ngIf="check">Checked!!!</p>
+        <p *ngIf="!check">Unchecked!!!</p>
+    </div>
+
+    <!-- NG STYLE -->
+    <p>NgStyle : </p>
+    <input type="text" [ngStyle]="{'color' : 'red'}"><br>
+
+    <!-- NG CLASS -->
+    <p>NgClass : </p>
+    <div [ngClass]="['nClass']">
+        ngClass attributes 
+    </div>
+
+    <!-- NG FOR -->
+    <p>Ng For : </p>
+    <div>
+        <label for="prlang"></label>
+        <select [attr.style]="attr" [(ngModel)]="selectedValue" name="prlang">
+            <option *ngFor="let plang of Lang" [value]="plang">{{plang}}</option>
+        </select>
+    </div>
+
+    <p>Ng Switch : </p>
+    <!-- NG SWITCH CASE -->
+    <div [ngSwitch]="selectedValue">
+        <p *ngSwitchCase="Lang[0]">Python is Selected</p>
+        <div *ngSwitchCase="Lang[1]">C is Selected</div>
+        <div *ngSwitchCase="Lang[2]">C++ is Selected</div>
+        <div *ngSwitchCase="Lang[3]">Java is Selected</div>
+        <div *ngSwitchCase="Lang[4]">C# is Selected</div>
+        <div *ngSwitchCase="Lang[5]">Javascript is Selected</div>
+    </div>
+
+
+
+
